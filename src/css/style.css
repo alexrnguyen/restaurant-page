@@ -4,27 +4,51 @@
   --secondary-color: lightgray;
 }
 
-/* || Navigation Bar */
-.content {
+body {
+  margin: 0;
 }
+
+/* || Navigation Bar */
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.5rem;
-  padding: 1rem;
+  padding: 1rem 3rem;
   background-color: var(--secondary-color);
 }
 
+.logo {
+  font-size: 1.5rem;
+}
+
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 3rem;
   margin: 0;
   padding: 0;
 }
 
+.nav-link {
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
 /* || Home Page */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img {
+  width: 50%;
+}
 
 /* || About Page */
 
@@ -35,3 +59,7 @@
 /* || Contact Page */
 
 /* || Footer */
+
+.footer {
+  background-color: lightgray;
+}

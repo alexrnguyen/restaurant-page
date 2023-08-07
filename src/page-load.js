@@ -1,4 +1,3 @@
-import HomeImage from "../src/assets/img/image.jpg";
 import "../src/css/style.css";
 
 /**
@@ -6,31 +5,11 @@ import "../src/css/style.css";
  */
 const pageLoad = () => {
   const content = document.getElementById("content");
-
-  content.appendChild(createNavBar());
-
   const mainContent = document.createElement("div");
-  mainContent.classList.add("main-content");
-
-  const header = document.createElement("h1");
-  header.textContent = "Odin Restaurant";
-
-  const image = new Image();
-  image.src = HomeImage;
-
-  const description = document.createElement("p");
-  description.textContent = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-    took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-    but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s 
-    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-    software like Aldus PageMaker including versions of Lorem Ipsum.`;
-
-  mainContent.appendChild(header);
-  mainContent.appendChild(image);
-  mainContent.appendChild(description);
-
+  mainContent.id = "main-content";
+  content.appendChild(createNavBar());
   content.appendChild(mainContent);
+  content.appendChild(createFooter());
 };
 
 const createNavBar = () => {
@@ -47,8 +26,9 @@ const createNavBar = () => {
   const linkNames = ["About", "Menu", "Reservations", "Contact Us"];
 
   for (const linkName of linkNames) {
-    const link = document.createElement("a");
+    const link = document.createElement("button");
     link.classList.add("nav-link");
+    link.classList.add(linkName.replace(" ", "-").toLowerCase());
     link.textContent = linkName;
     navLinks.appendChild(link);
   }
@@ -62,6 +42,12 @@ const createNavBar = () => {
 const createFooter = () => {
   const footer = document.createElement("div");
   footer.classList.add("footer");
+
+  const copyright = document.createElement("span");
+  copyright.textContent = "Copyright © Odin Restaurant 2023";
+
+  footer.appendChild(copyright);
+  return footer;
 };
 
 export default pageLoad;
