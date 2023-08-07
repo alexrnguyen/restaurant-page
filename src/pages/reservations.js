@@ -2,10 +2,10 @@ const createReservations = () => {
   const reservationsContent = document.createElement("div");
   reservationsContent.className = "reservations";
 
-  const test = document.createElement("h1");
-  test.textContent = "Success: Reservations";
+  const header = document.createElement("h1");
+  header.textContent = "Make a Reservation";
 
-  reservationsContent.appendChild(test);
+  reservationsContent.appendChild(header);
   return reservationsContent;
 };
 

@@ -2,10 +2,10 @@ const createContact = () => {
   const contactContent = document.createElement("div");
   contactContent.className = "contact-us";
 
-  const test = document.createElement("h1");
-  test.textContent = "Success: Contact Us";
+  const header = document.createElement("h1");
+  header.textContent = "Contact Us";
 
-  contactContent.appendChild(test);
+  contactContent.appendChild(header);
   return contactContent;
 };
 

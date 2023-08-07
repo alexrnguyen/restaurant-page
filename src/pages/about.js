@@ -2,10 +2,10 @@ const createAbout = () => {
   const aboutContent = document.createElement("div");
   aboutContent.className = "about";
 
-  const test = document.createElement("h1");
-  test.textContent = "Success: About";
+  const header = document.createElement("h1");
+  header.textContent = "About Us";
 
-  aboutContent.appendChild(test);
+  aboutContent.appendChild(header);
   return aboutContent;
 };
 

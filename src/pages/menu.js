@@ -2,10 +2,10 @@ const createMenu = () => {
   const menuContent = document.createElement("div");
   menuContent.className = "menu";
 
-  const test = document.createElement("h1");
-  test.textContent = "Success: Menu";
+  const header = document.createElement("h1");
+  header.textContent = "Menu";
 
-  menuContent.appendChild(test);
+  menuContent.appendChild(header);
   return menuContent;
 };
 

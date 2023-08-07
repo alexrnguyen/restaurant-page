@@ -8,9 +8,20 @@ body {
   margin: 0;
 }
 
+h1 {
+  text-align: center;
+}
+
+#content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* || Navigation Bar */
 
 .nav-bar {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +48,14 @@ body {
   text-decoration: none;
 }
 
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link .active {
+  text-decoration: underline;
+}
+
 /* || Home Page */
 
 .home {
@@ -61,5 +80,10 @@ body {
 /* || Footer */
 
 .footer {
+  margin-top: auto;
+  height: max(5vh, 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: lightgray;
 }

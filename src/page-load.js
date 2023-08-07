@@ -13,7 +13,7 @@ const pageLoad = () => {
 };
 
 const createNavBar = () => {
-  const navBar = document.createElement("div");
+  const navBar = document.createElement("header");
   navBar.classList.add("nav-bar");
 
   const logo = document.createElement("div");
@@ -40,11 +40,12 @@ const createNavBar = () => {
 };
 
 const createFooter = () => {
-  const footer = document.createElement("div");
+  const footer = document.createElement("footer");
   footer.classList.add("footer");
 
   const copyright = document.createElement("span");
-  copyright.textContent = "Copyright © Odin Restaurant 2023";
+  copyright.className = "copyright";
+  copyright.textContent = "© 2023 Odin Restaurant. All rights reserved";
 
   footer.appendChild(copyright);
   return footer;
