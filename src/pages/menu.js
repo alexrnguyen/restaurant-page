@@ -9,4 +9,6 @@ const createMenu = () => {
   return menuContent;
 };
 
+const createMenuItem = () => {};
+
 export default createMenu;

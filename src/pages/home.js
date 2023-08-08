@@ -33,15 +33,61 @@ const createHome = () => {
   const locationHoursContainer = document.createElement("div");
   locationHoursContainer.className = "location-hours-container";
 
+  const divider = document.createElement("div");
+  divider.className = "divider";
+
+  locationHoursContainer.appendChild(createLocationContainer());
+  locationHoursContainer.appendChild(divider);
+  locationHoursContainer.appendChild(createHoursContainer());
+
   homeContent.appendChild(header);
   homeContent.appendChild(imageContainer);
   homeContent.appendChild(description);
+  homeContent.appendChild(locationHoursContainer);
 
   return homeContent;
 };
 
-const createLocationContainer = () => {};
+const createLocationContainer = () => {
+  const locationContainer = document.createElement("div");
+  locationContainer.className = "location-container";
 
-const createHoursContainer = () => {};
+  const header = document.createElement("h3");
+  header.className = "location-header";
+  header.textContent = "Address";
+
+  const address = document.createElement("div");
+  address.className = "address";
+  address.textContent = "9570 118 Ave NW, Edmonton, AB";
+
+  locationContainer.appendChild(header);
+  locationContainer.appendChild(address);
+  return locationContainer;
+};
+
+const createHoursContainer = () => {
+  const hoursContainer = document.createElement("div");
+  hoursContainer.className = "hours-container";
+
+  const header = document.createElement("h3");
+  header.className = "hours-header";
+  header.textContent = "Hours";
+
+  const weekdayHours = document.createElement("div");
+  weekdayHours.className = "weekday-hours";
+  weekdayHours.innerHTML =
+    '<p><span class="days-of-week">Mon-Thurs: <span/>8am-8pm<p/>';
+
+  const weekendHours = document.createElement("div");
+  weekendHours.className = "weekend-hours";
+  weekendHours.innerHTML =
+    '<p><span class="days-of-week">Fri-Sun: <span/>8am-11pm<p/>';
+
+  hoursContainer.appendChild(header);
+  hoursContainer.appendChild(weekdayHours);
+  hoursContainer.appendChild(weekendHours);
+
+  return hoursContainer;
+};
 
 export default createHome;
