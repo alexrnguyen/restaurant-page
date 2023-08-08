@@ -4,6 +4,9 @@ import { MenuItem } from "../models/MenuItem";
 import PokeBowl from "../assets/img/menu-items/poke-bowl.jpg";
 import Salad from "../assets/img/menu-items/salad.jpg";
 import SirloinSteak from "../assets/img/menu-items/sirloinsteak.jpg";
+import Ribs from "../assets/img/menu-items/ribs.jpg";
+import Sushi from "../assets/img/menu-items/sushi.jpg";
+import Burger from "../assets/img/menu-items/burger.jpg";
 
 const createMenu = () => {
   const menuContent = document.createElement("div");
@@ -39,6 +42,18 @@ const generateMenuItems = (menuGrid) => {
     27
   );
   menuGrid.appendChild(createMenuItem(sirloinSteak));
+
+  const ribsDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
+  const ribs = new MenuItem("Ribs", Ribs, ribsDescription, 23);
+  menuGrid.appendChild(createMenuItem(ribs));
+
+  const sushiDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
+  const sushi = new MenuItem("Sushi", Sushi, sushiDescription, 25);
+  menuGrid.appendChild(createMenuItem(sushi));
+
+  const burgerDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
+  const burger = new MenuItem("Burger", Burger, burgerDescription, 18);
+  menuGrid.appendChild(createMenuItem(burger));
 };
 
 const createMenuItem = ({ name, img, description, price }) => {
