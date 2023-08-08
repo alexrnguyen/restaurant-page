@@ -1,4 +1,5 @@
 import HomeImage from "../../src/assets/img/image.jpg";
+import createReservations from "./reservations";
 
 const createHome = () => {
   const homeContent = document.createElement("div");
@@ -7,9 +8,18 @@ const createHome = () => {
   const header = document.createElement("h1");
   header.textContent = "Odin Restaurant";
 
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "image-container";
+
   const image = new Image();
   image.src = HomeImage;
   image.classList.add("home-img");
+  imageContainer.appendChild(image);
+
+  const bookTableButton = document.createElement("button");
+  bookTableButton.className = "book-table";
+  bookTableButton.textContent = "Book a Table";
+  imageContainer.appendChild(bookTableButton);
 
   const description = document.createElement("p");
   description.textContent = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -18,12 +28,20 @@ const createHome = () => {
     but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s 
     with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
     software like Aldus PageMaker including versions of Lorem Ipsum.`;
+  description.classList.add("description");
+
+  const locationHoursContainer = document.createElement("div");
+  locationHoursContainer.className = "location-hours-container";
 
   homeContent.appendChild(header);
-  homeContent.appendChild(image);
+  homeContent.appendChild(imageContainer);
   homeContent.appendChild(description);
 
   return homeContent;
 };
+
+const createLocationContainer = () => {};
+
+const createHoursContainer = () => {};
 
 export default createHome;

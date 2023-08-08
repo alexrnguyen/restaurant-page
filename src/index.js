@@ -8,6 +8,12 @@ import createContact from "./pages/contact";
 const loadHome = (mainContent) => {
   mainContent.innerHTML = "";
   mainContent.appendChild(createHome());
+
+  // Add event listener for Book Table button
+  const bookTableButton = document.querySelector(".book-table");
+  bookTableButton.addEventListener("click", () =>
+    loadReservations(mainContent)
+  );
 };
 
 const loadAbout = (mainContent) => {
