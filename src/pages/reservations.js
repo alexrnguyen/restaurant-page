@@ -70,6 +70,7 @@ const createForm = () => {
 
   dateInput.onchange = () => {
     timeInput.innerHTML = "";
+    // Add placeholder back if date input is cleared
     if (dateInput.valueAsDate === null) {
       timeInput.add(addPlaceholder());
       return;
@@ -84,6 +85,7 @@ const createForm = () => {
     }
     for (let time = 8; time < closingHour; time = time + 0.5) {
       const option = document.createElement("option");
+      // Determine text content based on whether the time ends in :00 or :30
       option.text = `${time % 1 === 0 ? time : time - 0.5}:${
         time % 1 === 0 ? "00" : "30"
       }`;

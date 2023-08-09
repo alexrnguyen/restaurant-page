@@ -180,6 +180,33 @@ h1 {
 
 /* || Contact Page */
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  width: fit-content;
+  background-color: var(--secondary-color);
+}
+
+textarea {
+  resize: none;
+}
+
+iframe {
+  border: none;
+}
+
 /* || Footer */
 
 .footer {
