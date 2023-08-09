@@ -36,6 +36,11 @@ const loadContact = (mainContent) => {
   mainContent.appendChild(createContact());
 };
 
+const setLinkActive = (link, navLinks) => {
+  Array.from(navLinks).forEach((navLink) => navLink.classList.remove("active"));
+  link.classList.add("active");
+};
+
 const initializeWebsite = () => {
   pageLoad();
   const content = document.getElementById("content");
@@ -43,6 +48,7 @@ const initializeWebsite = () => {
   loadHome(mainContent);
 
   // Navigation Links
+  const navLinks = document.querySelectorAll(".nav-link");
   const logo = document.querySelector(".logo");
   const aboutButton = document.querySelector(".about");
   const menuButton = document.querySelector(".menu");
@@ -50,13 +56,28 @@ const initializeWebsite = () => {
   const contactButton = document.querySelector(".contact-us");
 
   // Event Listeners
-  logo.addEventListener("click", () => loadHome(mainContent));
-  aboutButton.addEventListener("click", () => loadAbout(mainContent));
-  menuButton.addEventListener("click", () => loadMenu(mainContent));
-  reservationsButton.addEventListener("click", () =>
-    loadReservations(mainContent)
-  );
-  contactButton.addEventListener("click", () => loadContact(mainContent));
+  logo.addEventListener("click", () => {
+    Array.from(navLinks).forEach((navLink) =>
+      navLink.classList.remove("active")
+    );
+    loadHome(mainContent);
+  });
+  aboutButton.addEventListener("click", () => {
+    setLinkActive(aboutButton, navLinks);
+    loadAbout(mainContent);
+  });
+  menuButton.addEventListener("click", () => {
+    setLinkActive(menuButton, navLinks);
+    loadMenu(mainContent);
+  });
+  reservationsButton.addEventListener("click", () => {
+    setLinkActive(reservationsButton, navLinks);
+    loadReservations(mainContent);
+  });
+  contactButton.addEventListener("click", () => {
+    setLinkActive(contactButton, navLinks);
+    loadContact(mainContent);
+  });
 };
 
 initializeWebsite();

@@ -10,7 +10,7 @@ import Burger from "../assets/img/menu-items/burger.jpg";
 
 const createMenu = () => {
   const menuContent = document.createElement("div");
-  menuContent.className = "menu";
+  menuContent.className = "menu-page";
 
   const header = document.createElement("h1");
   header.textContent = "Menu";

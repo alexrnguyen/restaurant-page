@@ -5,12 +5,17 @@
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
 h1 {
   text-align: center;
   margin-top: 0;
+}
+
+label {
+  display: block;
 }
 
 #content {
@@ -23,6 +28,14 @@ h1 {
   margin: 1rem 5vw;
 }
 
+.contact-page,
+.reservation-page,
+.about-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /* || Navigation Bar */
 
 .nav-bar {
@@ -57,7 +70,7 @@ h1 {
   color: white;
 }
 
-.nav-link .active {
+.nav-link.active {
   text-decoration: underline;
 }
 
@@ -129,6 +142,13 @@ h1 {
 
 /* || About Page */
 
+.about-paragraph {
+  padding: 2rem;
+  border-radius: 20px;
+  width: fit-content;
+  background-color: var(--secondary-color);
+}
+
 /* || Menu Page */
 
 .menu-grid {
@@ -178,29 +198,78 @@ h1 {
 
 /* || Reservations Page */
 
-/* || Contact Page */
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.content-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+.reservation-container {
   padding: 2rem;
   border-radius: 20px;
   width: fit-content;
   background-color: var(--secondary-color);
 }
 
+.reservation-container form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reservation-container input,
+.reservation-container select {
+  border-radius: 5px;
+  min-height: 1.5rem;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid black;
+}
+
+.submit-button {
+  align-self: center;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* || Contact Page */
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 2rem;
+  border-radius: 20px;
+  width: fit-content;
+  background-color: var(--secondary-color);
+}
+
+.content-container form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.content-container form h3 {
+  text-align: center;
+}
+
+.content-container input,
 textarea {
+  border-radius: 5px;
+  min-height: 1.5rem;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid black;
+}
+
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
   resize: none;
+}
+
+.send-button {
+  align-self: center;
+  padding: 1rem 3rem;
+  font-size: 1rem;
 }
 
 iframe {

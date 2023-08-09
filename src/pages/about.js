@@ -1,11 +1,12 @@
 const createAbout = () => {
   const aboutContent = document.createElement("div");
-  aboutContent.className = "about";
+  aboutContent.className = "about-page";
 
   const header = document.createElement("h1");
   header.textContent = "About Us";
 
   const aboutParagraph = document.createElement("p");
+  aboutParagraph.className = "about-paragraph";
   aboutParagraph.textContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
     ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. 
     Neque gravida in fermentum et sollicitudin ac orci. Sodales ut etiam sit amet nisl purus in mollis. Nunc id cursus 

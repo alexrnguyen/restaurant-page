@@ -1,6 +1,6 @@
 const createReservations = () => {
   const reservationsContent = document.createElement("div");
-  reservationsContent.className = "reservations";
+  reservationsContent.className = "reservation-page";
 
   const header = document.createElement("h1");
   header.textContent = "Make a Reservation";
@@ -136,6 +136,9 @@ const createForm = () => {
   reservationForm.appendChild(numPeopleContainer);
   reservationForm.appendChild(submitButton);
 
+  reservationForm.onsubmit = (event) => {
+    event.preventDefault();
+  };
   return reservationForm;
 };
 

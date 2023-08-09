@@ -1,6 +1,6 @@
 const createContact = () => {
   const contactContent = document.createElement("div");
-  contactContent.className = "contact";
+  contactContent.className = "contact-page";
 
   const header = document.createElement("h1");
   header.textContent = "Contact Us";
@@ -52,6 +52,7 @@ const createForm = () => {
   emailInput.name = "email";
   emailInput.id = "email";
   emailInput.required = true;
+  emailInput.placeholder = "eg. johnsmith@gmail.com";
 
   emailInputContainer.appendChild(emailInputLabel);
   emailInputContainer.appendChild(emailInput);
@@ -68,6 +69,7 @@ const createForm = () => {
   messageInput.required = true;
   messageInput.rows = 10;
   messageInput.cols = 50;
+  messageInput.placeholder = "Type a message...";
 
   messageInputContainer.appendChild(messageInputLabel);
   messageInputContainer.appendChild(messageInput);
@@ -83,6 +85,10 @@ const createForm = () => {
   contactForm.appendChild(emailInputContainer);
   contactForm.appendChild(messageInputContainer);
   contactForm.appendChild(sendButton);
+
+  contactForm.onsubmit = (event) => {
+    event.preventDefault();
+  };
   return contactForm;
 };
 
