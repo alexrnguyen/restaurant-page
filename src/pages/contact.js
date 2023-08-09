@@ -9,4 +9,9 @@ const createContact = () => {
   return contactContent;
 };
 
+const createForm = () => {
+  const contactForm = document.createElement("form");
+  return contactForm;
+};
+
 export default createContact;
